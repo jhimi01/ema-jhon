@@ -1,0 +1,23 @@
+.header{
+    max-width: 1200px;
+    height: 80px;
+    background: #1c2b35;
+    display: flex;align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.header h2{
+    margin: 0;
+}
+.header a{
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.header a:hover{
+    color: rgb(0, 123, 255);
+}
