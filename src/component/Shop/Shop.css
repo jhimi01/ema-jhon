@@ -1,4 +1,11 @@
 .shop-container{
  display: grid;
  grid-template-columns:  4fr 1fr;
+ padding: 15px 30px;
+}
+
+.proucts-parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
