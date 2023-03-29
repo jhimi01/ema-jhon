@@ -2,14 +2,14 @@ import React from 'react';
 import './Cart.css';
 
 const Cart = ({cart}) => {
-    console.log(cart)
+    // console.log(cart)
     
     let Total =0;
     let TotalShipping =0;
     for(const product of cart) {
         Total = Total + product.price;
         TotalShipping = TotalShipping + product.shipping;
-        console.log(Total)
+        // console.log(Total)
     }
 
     const Tax = Total*7/100;

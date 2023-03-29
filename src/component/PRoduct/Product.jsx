@@ -18,7 +18,7 @@ const Product = (props) => {
     return (
         <div className='cards'>
          <div className='card-details'>
-         <img src={img} alt="" />
+         <img src={img?img:'no img found'} alt="" />
           <h4>{name}</h4>
           <h5>Price: {price}$</h5>
           <p>Manufacturer: {seller}</p>
