@@ -6,9 +6,12 @@ const Cart = ({cart}) => {
     
     let Total =0;
     let TotalShipping =0;
+    let quantity = 0;
     for(const product of cart) {
-        Total = Total + product.price;
+        // product.quantity = product.quantity || 1;
+        Total = Total + product.price * product.quantity;
         TotalShipping = TotalShipping + product.shipping;
+        quantity = quantity + product.quantity;
         // console.log(Total)
     }
 
@@ -18,7 +21,7 @@ const Cart = ({cart}) => {
     return (
         <div className='cart'>
              <h2>order summery</h2>
-      <p>selected item: {cart.length}</p>
+      <p>selected item: {quantity}</p>
       <p>Total price: ${Total}</p>
       <p>Total Shipping:{TotalShipping}</p>
       <p>Tax: ${Tax.toFixed(2)}</p>
