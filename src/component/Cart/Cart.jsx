@@ -1,18 +1,16 @@
 import React from 'react';
 import './Cart.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDashboard, faTrashAlt, } from '@fortawesome/free-solid-svg-icons';
 
-const Cart = ({cart}) => {
-    // console.log(cart)
-    
+const Cart = ({cart, handleclearCart, children}) => {
     let Total =0;
     let TotalShipping =0;
     let quantity = 0;
     for(const product of cart) {
-        // product.quantity = product.quantity || 1;
         Total = Total + product.price * product.quantity;
         TotalShipping = TotalShipping + product.shipping;
         quantity = quantity + product.quantity;
-        // console.log(Total)
     }
 
     const Tax = Total*7/100;
@@ -26,6 +24,12 @@ const Cart = ({cart}) => {
       <p>Total Shipping:{TotalShipping}</p>
       <p>Tax: ${Tax.toFixed(2)}</p>
     <h4>Grand Total: ${grandtotal}</h4>
+   <button onClick={handleclearCart} style={{width:'100%', marginBottom:'15px'}}>clear cart
+   <FontAwesomeIcon style={{marginLeft:'15px'}}  icon={faTrashAlt}/>
+   </button>
+   {/* <button style={{width:'100%'}}>
+   <FontAwesomeIcon  style={{marginLeft:'15px'}} icon={faDashboard}/></button> */}
+        {children}
         </div>
     );
 };
