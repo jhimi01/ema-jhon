@@ -2,6 +2,7 @@ import React from 'react';
 import './Cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDashboard, faTrashAlt, } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Cart = ({cart, handleclearCart, children}) => {
     let Total =0;
@@ -28,7 +29,7 @@ const Cart = ({cart, handleclearCart, children}) => {
    <FontAwesomeIcon style={{marginLeft:'15px'}}  icon={faTrashAlt}/>
    </button>
    {/* <button style={{width:'100%'}}>
-   <FontAwesomeIcon  style={{marginLeft:'15px'}} icon={faDashboard}/></button> */}
+   <FontAwesomeIcon  style={{marginLeft:'15px'}} icon={faDashboard}/><Link to='/checkout'>checkout</Link></button> */}
         {children}
         </div>
     );
